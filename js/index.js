@@ -99,7 +99,7 @@ $(document).ready(function()
     var cookiesarray;
     var a;
 
-    
+
     $("#crtbtn").click(function()
     {
 
@@ -228,21 +228,3 @@ $(document).ready(function()
 
     
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
