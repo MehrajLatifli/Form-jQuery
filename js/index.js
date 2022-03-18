@@ -155,7 +155,11 @@ $(document).ready(function()
 
             } 
         
+            setTimeout(() => {
 
+                window.location.reload();
+
+            }, 1000);
            
 
         }
