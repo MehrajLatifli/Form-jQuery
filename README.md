@@ -1,1 +1,1 @@
-# Form (with jQuery)
+# Form (use jQuery)
