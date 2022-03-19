@@ -1,7 +1,8 @@
 
 $(document).ready(function()
 {
-    
+
+ 
 
     $('.message a').click(function()
     {
@@ -98,19 +99,28 @@ $(document).ready(function()
 
     var cookiesarray;
     var a;
+    var strarray;
 
 
     $("#crtbtn").click(function()
     {
 
-        if(n_r.length!=0 && encodeURI(p_r.val()).length!=0 && e_r.length!=0)
+        if(n_r.length!=0 && encodeURI(p_r.val()).length!=0 && e_r.length!=0 && $('#email').val().indexOf('@')>-1)
         {
-            var strarray=[n_r,encodeURI(p_r.val()),e_r];
+             strarray=[encodeURI($("#name").val())," ",encodeURI(p_r.val())," ",encodeURI($("#email").val())];
     
+
+             $.cookie('registartion',null, {path:'/'});
+
+             for(var cookie in $.cookie('registartion',strarray, {expires: 1,path:'/'})) {
+                $.removeCookie(cookie);
+             }
+
             a= $.cookie('registartion',strarray, {expires: 1,path:'/'});
     
     
-            cookiesarray=a.toString().split("%2C");
+            cookiesarray=a.toString().replaceAll("%2C","").replaceAll("%40","@").replaceAll("%20"," ");
+           
     
             alert(cookiesarray);
 
@@ -118,6 +128,11 @@ $(document).ready(function()
 
         else
         {
+            $.cookie('registartion',null, {path:'/'});
+
+            for(var cookie in $.cookie('registartion',strarray, {expires: 1,path:'/'})) {
+                $.removeCookie(cookie);
+             }
 
             if(n_r.length==0)
             {
@@ -174,11 +189,24 @@ $(document).ready(function()
     {
         if(n_r2.length!=0 && encodeURI(p_r2.val()).length!=0)
         {
+  
 
-            if($("#name_2:contains("+cookiesarray+")") && $("#password_2:contains("+cookiesarray+")"))
+            if($("#name_2").val()==$("#name").val() && $("#password_2").val()==$("#password").val())
             {
+             
+
+                    alert(cookiesarray);
+
+                    for (let index = 0; index < cookiesarray.length; index++) {
+                      
                 
-                alert("wellcome");
+                   
+                            
+                            console.log(cookiesarray);
+                        
+                        
+                    }
+                
             }
 
         }
