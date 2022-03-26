@@ -105,7 +105,7 @@ $(document).ready(function()
     $("#crtbtn").click(function()
     {
 
-        if(n_r.length!=0 && encodeURI(p_r.val()).length!=0 && e_r.length!=0 && $('#email').val().indexOf('@')>-1)
+        if(n_r.length!=0 || encodeURI(p_r.val()).length!=0 ||  e_r.length!=0 || $('#email').val().indexOf('@')>-1)
         {
              strarray=[encodeURI($("#name").val())," ",encodeURI(p_r.val())," ",encodeURI($("#email").val())];
     
@@ -187,7 +187,7 @@ $(document).ready(function()
 
     $("#loginbtn").click(function()
     {
-        if(n_r2.length!=0 && encodeURI(p_r2.val()).length!=0)
+        if(n_r2.length!=0 || encodeURI(p_r2.val()).length!=0)
         {
   
 
